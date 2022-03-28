@@ -1,0 +1,235 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Mar 28, 2022 at 06:36 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.2
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `pamee`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE `category` (
+  `ct_id` int(11) NOT NULL,
+  `ct_name` varchar(50) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`ct_id`, `ct_name`) VALUES
+(1, 'ผ้าคอตตอนสแปนเด็กซ์'),
+(2, 'ผ้าสเตย์'),
+(3, 'ผ้าไมโคร'),
+(4, 'ผ้ายีนส์'),
+(5, 'ผ้าสำลี');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `images`
+--
+
+CREATE TABLE `images` (
+  `img_id` int(11) NOT NULL,
+  `pd_id` int(11) NOT NULL,
+  `img_name` varchar(50) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `images`
+--
+
+INSERT INTO `images` (`img_id`, `pd_id`, `img_name`) VALUES
+(1, 1, 'Pd_1__0.jpg'),
+(2, 2, 'Pd_2__0.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `login`
+--
+
+CREATE TABLE `login` (
+  `log_id` int(10) NOT NULL,
+  `Emp_id` int(10) NOT NULL,
+  `Log_date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order`
+--
+
+CREATE TABLE `order` (
+  `Or_id` int(10) NOT NULL,
+  `Or_name` varchar(100) NOT NULL,
+  `Or_add` text NOT NULL,
+  `Or_tel` varchar(10) NOT NULL,
+  `pd_id` int(10) NOT NULL,
+  `Or_total` int(10) NOT NULL,
+  `Order_date` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_detail`
+--
+
+CREATE TABLE `order_detail` (
+  `Order_id` int(10) NOT NULL,
+  `pd_id` int(10) NOT NULL,
+  `pd_price` int(20) NOT NULL,
+  `Order_amount` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product`
+--
+
+CREATE TABLE `product` (
+  `pd_id` int(11) NOT NULL,
+  `pd_name` varchar(100) COLLATE utf8_bin NOT NULL,
+  `ct_id` int(11) NOT NULL,
+  `pd_detail` text COLLATE utf8_bin NOT NULL,
+  `pd_price` int(11) NOT NULL,
+  `pd_onhand` int(11) NOT NULL,
+  `pd_status` char(1) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`pd_id`, `pd_name`, `ct_id`, `pd_detail`, `pd_price`, `pd_onhand`, `pd_status`) VALUES
+(1, 'ผ้าคอตตอนสแปนเด็กซ์(ธรรมดา)', 1, 'เป็นเส้นใยธรรมชาติ 100% ชุดที่ผลิตจากผ้าฝ้ายเป็นที่นิยม เนื่องจาก เนื้อนุ่ม สวมใส่สบายแม้อากาศร้อน เพราะสามารถดูดซับเหงื่อและระบายอากาศได้ดีเยี่ยม เนื้อผ้าจะมีลักษณะด้าน', 150, 50, '1'),
+(2, 'ผ้าคอตตอนสแปนเด็กซ์(สี)', 1, 'เป็นเส้นใยธรรมชาติ 100% ชุดที่ผลิตจากผ้าฝ้ายเป็นที่นิยม เนื่องจาก เนื้อนุ่ม สวมใส่สบายแม้อากาศร้อน เพราะสามารถดูดซับเหงื่อและระบายอากาศได้ดีเยี่ยม เนื้อผ้าจะมีลักษณะด้าน', 150, 40, '1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `Emp_id` int(11) NOT NULL,
+  `Emp_Name` varchar(100) NOT NULL,
+  `Emp_Phone` varchar(11) NOT NULL,
+  `Emp_Add` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`Emp_id`, `Emp_Name`, `Emp_Phone`, `Emp_Add`, `password`) VALUES
+(1, 'admin', '0876543210', '123 abc 456 qwe', '123456');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`ct_id`);
+
+--
+-- Indexes for table `images`
+--
+ALTER TABLE `images`
+  ADD PRIMARY KEY (`img_id`);
+
+--
+-- Indexes for table `login`
+--
+ALTER TABLE `login`
+  ADD PRIMARY KEY (`log_id`);
+
+--
+-- Indexes for table `order`
+--
+ALTER TABLE `order`
+  ADD PRIMARY KEY (`Or_id`);
+
+--
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`pd_id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`Emp_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `ct_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `images`
+--
+ALTER TABLE `images`
+  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `login`
+--
+ALTER TABLE `login`
+  MODIFY `log_id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `order`
+--
+ALTER TABLE `order`
+  MODIFY `Or_id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `pd_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `Emp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
