@@ -38,7 +38,7 @@
       <div>
         <table class="table align-middle">
           <thead>
-            <tr>
+            <tr class="table-info">
               <th scope="col">รหัส</th>
               <th scope="col">ชื่อ</th>
               <th scope="col">ประเภทสินค้า</th>

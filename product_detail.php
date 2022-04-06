@@ -3,33 +3,20 @@
    session_start();
    include('server.php'); 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-  <link rel="icon" href="">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Phamee Shop</title>
-    <!-- Font Awesome -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-      rel="stylesheet"
-    />
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- MDB -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Phamee Shop</title>
+  <link href="style1.css" rel="stylesheet" type="text/css" />
+  <link href="css1.css" rel="stylesheet" type="text/css" />
+  <?php include "resource.php" ?>
+</head>
 
 
-<body bgcolor="#f8f8f8">
+<body >
 	<?php include "header.php" ?>
     <div class="d-flex">
         <div class="p-2 flex-shrink-1">

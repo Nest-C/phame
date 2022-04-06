@@ -13,28 +13,27 @@
 <?php include "resource.php" ?>
 </head>
 
-<body bgcolor="#f8f8f8">
+<body>
 	<?php include "header.php" ?>
     <div style="min-height: 100vh">
         <div class="container" style="margin: 20px auto; background: white;">
-				
-                         <div align="center" class="divider">
-                            <h2>ออเดอร์</h2>
-                            <div class="d-flex flex-row-reverse mt-4 pe-5">
-        <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-          +
-        </button>
-        </div>
-  <table class="table table-borderless table-hover ">
-  <thead>
-    <tr class="table-info">
-      <th scope="col">วันที่ซื้อ</th>
-      <th scope="col">รหัสออเดอร์</th>
-      <th scope="col">ชื่อรายการ</th>
-      <th scope="col">ราคาทั้งหมด</th>
-      <th scope="col">รายละเอียด</th>
-      <th scope="col">ลบ</th>
-    </tr>
-  </thead>
+            <div align="center" >
+            <h2>ออเดอร์</h2>
+            <div class="d-flex flex-row-reverse m-4">
+              <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                +
+              </button>
+            </div>
+        <table class="table table-borderless table-hover">
+        <thead>
+          <tr class="table-info">
+            <th scope="col">วันที่ซื้อ</th>
+            <th scope="col">รหัสออเดอร์</th>
+            <th scope="col">ชื่อรายการ</th>
+            <th scope="col">ราคาทั้งหมด</th>
+            <th scope="col">รายละเอียด</th>
+            <th scope="col">ลบ</th>
+          </tr>
+        </thead>
 </body>
 </html>

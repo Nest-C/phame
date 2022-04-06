@@ -8,9 +8,10 @@
 	$sale = $_POST['sale'] ? $_POST['sale']: 0;
 	$onhand = $_POST['onhand'];
 	$pdid = $_GET['pdid'];
-	if ($onhand <= 30){
+	$onhand_get = $_GET['onhand'];
+	if ($onhand_get <= 30){
 		$status = 2
-	}else if($onhand > 30){
+	}else if($onhand_get > 30){
 		$status = 1
 	}else{
 		$status = 0
