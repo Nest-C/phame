@@ -1,12 +1,7 @@
 <div class="col-md-3">
-        <div
-            class="img-fluid"
-            style="
-            background-image: url('images/<?=$rs['img_name']?>');
-            min-height: 200px;
-            max-height: 200px;
-            "
-        ></div>
+        <div class="bg-image hover-zoom" style=" height: 30vh;">
+            <img src="images/<?=$rs['img_name']?>" />
+        </div>
         <div
             class="teal"
             align="center"

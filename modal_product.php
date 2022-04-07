@@ -69,3 +69,13 @@
     </div>
   </div>
 </div>
+
+<script>
+	(function () {
+		<?php 
+		if(isset($_GET{'modal'})) : ?>
+			const myModal = new mdb.Modal(document.getElementById('exampleModal'))
+			myModal.show()
+			<?php endif ?>
+	})()
+</script>
