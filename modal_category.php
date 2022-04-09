@@ -28,7 +28,6 @@
 	</div>
 
 </div>
-
 <script>
 	(function () {
 		<?php 
@@ -36,6 +35,9 @@
 			const myModal = new mdb.Modal(document.getElementById('exampleModal'))
 			myModal.show()
 			<?php endif ?>
+			const myModalEl = document.getElementById('exampleModal')
+			myModalEl.addEventListener('hidden.mdb.modal', (e) => {
+				go("admin_category.php");
+			})
 	})()
 </script>
-

@@ -21,9 +21,15 @@
       <div class="container">
         <div>
           <div class="d-flex flex-row-reverse mt-4 pe-5">
-          <button  type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+              <?php
+              	$sql = "SELECT * FROM user WHERE Emp_Name=admin;" ;
+              ?>
+                <?php if ($sql ) : ?>
+                <button  type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
                   +
                 </button>
+                <?php endif ?>
+
           </div>
           <h2 class="ps-3">พนักงาน</h2>
           <div class="clear"></div>
@@ -47,20 +53,20 @@
                 ?>
                <tr>
                <tr>
-                                <td><?=sprintf("%05d", $rs['Emp_id'])?></td>
-                                <td ><?=$rs['Emp_Name']?></td>
-                                <td ><?=$rs['Emp_Phone']?></td>
-                                <td>
-                                <button class="btn btn-warning btn-sm px-3" onclick="go('admin_member.php?modal=register&mbid=<?=$rs['Emp_id']?>');">
-                                  <i class="fas fa-edit"></i>
-                                </button>
-                                </td>
-                               <td>
-                                <buttn onclick="confirm('Are you sure to remove this member?') ? go('admin_delete_member.php?mbid=<?=$rs['Emp_id']?>'):null" class="btn btn-danger btn-sm px-3">
-                                  <i class="fas fa-times"></i>
-                                </buttn>
-                              </td>
-                              </tr>
+                    <td><?=sprintf("%05d", $rs['Emp_id'])?></td>
+                    <td ><?=$rs['Emp_Name']?></td>
+                    <td ><?=$rs['Emp_Phone']?></td>
+                    <td>
+                    <button  class="btn btn-warning btn-sm px-3" onclick="go('admin_member.php?modal=member&mbid=<?=$rs['Emp_id']?>');">
+                      <i class="fas fa-edit"></i>
+                    </button>
+                    </td>
+                    <td>
+                    <buttn onclick="confirm('Are you sure to remove this member?') ? go('admin_delete_member.php?mbid=<?=$rs['Emp_id']?>'):null" class="btn btn-danger btn-sm px-3">
+                      <i class="fas fa-times"></i>
+                    </buttn>
+                  </td>
+                  </tr>
                <?php
                  }
                 ?>
@@ -68,41 +74,6 @@
           </table>
         </div>
       </div>
-    </div>
-    <!-- a -->
-    <div style="min-height: 100vh">
-        <div class="container" style="margin: 20px auto; background: white;">
-                <div align="center" class="divider">
-                	<div class="right btn red" onclick="go('')">เพิ่ม</div>
-                  <h2>ผู้ใช้งาน</h2>
-                </div>
-                <div align="center">
-                	<table width="70%" border="1" cellspacing="0" cellpadding="5">
-                          <tr>
-                            <th scope="col">รหัส</th>
-                            <th scope="col">ชื่อ</th>
-                            <th scope="col">เบอร์ติดต่อ</th>
-                            <th scope="col">แก้ไข</th>
-                            <th scope="col">ลบ</th>
-                          </tr>
-                          <?php
-						  	$sql = "SELECT * FROM user";
-							$ex = mysqli_query($conn, $sql);
-							while ($rs = mysqli_fetch_array($ex)) {
-						  ?>
-                              <tr align="center">
-                                <td><?=sprintf("%05d", $rs['Emp_id'])?></td>
-                                <td align="left"><?=$rs['Emp_Name']?></td>
-                                <td align="left"><?=$rs['Emp_Phone']?></td>
-                                <td class="btn teal" style="border-radius: 0px;" onclick="go('admin_member.php?modal=register&mbid=<?=$rs['Emp_id']?>');">แก้ไข</td>
-                               <td class="btn red" style="border-radius: 0px;" onclick="confirm('Are you sure to remove this member?') ? go('admin_delete_member.php?mbid=<?=$rs['Emp_id']?>'):null">ลบ</td>
-                              </tr>
-                          <?php
-							}
-							?>
-                        </table>
-                </div>
-        </div>
     </div>
 </body>
 </html>
