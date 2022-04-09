@@ -14,7 +14,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title" id="exampleModalLabel"><?php echo isset($q) ? "แก้ไขสินค้า":"เพิ่มสินค้า"?></h5>
           <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -77,5 +77,9 @@
 			const myModal = new mdb.Modal(document.getElementById('exampleModal'))
 			myModal.show()
 			<?php endif ?>
+			const myModalEl = document.getElementById('exampleModal')
+			myModalEl.addEventListener('hidden.mdb.modal', (e) => {
+				go("admin_product.php");
+			})
 	})()
 </script>

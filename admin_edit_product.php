@@ -5,18 +5,10 @@
 	$ctid = $_POST['ctid'];
 	$detail = nl2br($_POST['detail']);
 	$price = $_POST['price'];
-	$sale = $_POST['sale'] ? $_POST['sale']: 0;
 	$onhand = $_POST['onhand'];
 	$pdid = $_GET['pdid'];
-	$onhand_get = $_GET['onhand'];
-	if ($onhand_get <= 30){
-		$status = 2
-	}else if($onhand_get > 30){
-		$status = 1
-	}else{
-		$status = 0
-	}
-	$sql = "UPDATE product SET pd_name = '$name', ct_id = $ctid, pd_detail = '$detail', pd_sale = $sale, pd_price = $price, pd_onhand = $onhand, pd_status = $status WHERE pd_id = $pdid";
+
+	$sql = "UPDATE product SET pd_name = '$name', ct_id = $ctid, pd_detail = '$detail', pd_price = $price, pd_onhand = $onhand WHERE pd_id = $pdid";
 	mysqli_query($conn, $sql);
 	
 	if (!empty($_FILES['img']['name'][0])) { 

@@ -16,13 +16,14 @@
 
 <body >
 	<?php include "header.php" ?>
+	<?php include "modal_member.php" ?>
   <div style="min-height: 100vh">
       <div class="container">
         <div>
           <div class="d-flex flex-row-reverse mt-4 pe-5">
-          <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-            +
-          </button>
+          <button  type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                  +
+                </button>
           </div>
           <h2 class="ps-3">พนักงาน</h2>
           <div class="clear"></div>

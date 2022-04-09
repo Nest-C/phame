@@ -1,4 +1,4 @@
-<div class="col-md-3">
+<div class="col-md-3 mb-3">
         <div class="bg-image hover-zoom" style=" height: 30vh;">
             <img src="images/<?=$rs['img_name']?>" />
         </div>
@@ -6,7 +6,6 @@
             class="teal"
             align="center"
             style="
-            padding: 5px 5px;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
