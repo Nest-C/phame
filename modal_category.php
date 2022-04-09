@@ -16,14 +16,17 @@
 			<h5 class="modal-title" id="exampleModalLabel">ประเภทสินค้า</h5>
 			<button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
 		</div>
-		<div class="modal-body">
-		<label>Name</label><br>
-				<input type="text" name="name" required placeholder="Name" value="<?php echo isset($q) ? $q['ct_name']:""?>"><br><br>
-		</div>
-		<div class="modal-footer">
-			<button type="button" class="btn btn-primary"><?php echo isset($q) ? "Edit":"Add"?></button>
-		</div>
-		</div>
+		<form action="<?=$action?>" method="post" enctype="multipart/form-data">
+			<div class="modal-body">
+			<label>Name</label><br>
+					<input type="text" name="name" required placeholder="Name" value="<?php echo isset($q) ? $q['ct_name']:""?>"><br><br>
+			</div>
+			<div class="modal-footer">
+			<input type="submit" class="btn btn-primary" value="<?php echo isset($q) ? "Edit":"Add"?>">
+				<button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+			</div>
+			</div>
+		</form>
 	</div>
 	</div>
 

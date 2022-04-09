@@ -49,19 +49,19 @@
                  while ($rs = mysqli_fetch_array($ex)) {
                 ?>
               <tr>
-                                <td><?=sprintf("%05d", $rs['ct_id'])?></td>
-                                <td ><?=$rs['ct_name']?></td>
-                                <td onclick="go('admin_category.php?modal=category&ctid=<?=$rs['ct_id']?>');">
-                                <button class="btn btn-warning btn-sm px-3">
-                                  <i class="fas fa-edit"></i>
-                                </button>
-                                </td>
-                               <td>
-                                <buttn ononclick="confirm('Are you sure to remove this category?') ? go('admin_delete_category.php?ctid=<?=$rs['ct_id']?>'):null" class="btn btn-danger btn-sm px-3">
-                                  <i class="fas fa-times"></i>
-                                </buttn>
-                              </td>
-                              </tr>
+                  <td><?=sprintf("%05d", $rs['ct_id'])?></td>
+                  <td ><?=$rs['ct_name']?></td>
+                  <td onclick="go('admin_category.php?modal=category&ctid=<?=$rs['ct_id']?>');">
+                  <button class="btn btn-warning btn-sm px-3">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  </td>
+                  <td>
+                  <button onclick="confirm('Are you sure to remove this category?') ? go('admin_delete_category.php?ctid=<?=$rs['ct_id']?>'):null" class="btn btn-danger btn-sm px-3">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </td>
+                </tr>
               <?php
                 }
                 ?>
