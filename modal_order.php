@@ -19,16 +19,18 @@
 		<div class="modal-body">
 			<form action="<?=$action?>" method="post" enctype="multipart/form-data">
 				<label>วันที่ซื้อ</label><br>
-                    <?php
+                <label class="mb-3">
+                <?php
                     echo gmdate('Y-m-d h:i:s', time());
-                    ?><br>
+                    ?></label><br>
+                <label>ชื่อลูกค้า</label><br>
 				<input type="text" name="name" required placeholder="ชื่อผู้ใช้" value="<?php echo isset($q) ? $q['Emp_Name']:""?>"><br><br>
 				<label>Phone</label><br>
 				<input type="text" name="phone" required placeholder="เบอร์โทร" value="<?php echo isset($q) ? $q['Emp_Phone']:""?>"><br><br>
 				<label>Address</label><br>
-				<input type="text" name="address" required placeholder="เบอร์โทร" value="<?php echo isset($q) ? $q['Emp_Add']:""?>"><br><br>
-				<label>Password</label><br>
-				<input type="text" name="password" required placeholder="รหัสผ่าน" value="<?php echo isset($q) ? $q['password']:""?>"><br><br>
+				<input type="text" name="address" required placeholder="ที่อยู่" value="<?php echo isset($q) ? $q['Emp_Add']:""?>"><br><br>
+				<label>สินค้า</label><br>
+				<input type="text" name="address" required placeholder="ที่อยู่" value="<?php echo isset($q) ? $q['Emp_Add']:""?>"><br><br>
 				<div align="right">
 				<input type="submit" class="btn btn-primary" value="<?php echo isset($q) ? "Edit":"Add"?>">
 				<button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
