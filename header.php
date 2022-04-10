@@ -10,7 +10,7 @@
             <div
             class="bg-image"
             style="
-                background-image: url('./img/pamee.png');
+                background-image: url('./img/logotest1.png');
                 Width: 25%;
                 height:250px;
                 top: 20%;
