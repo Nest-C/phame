@@ -34,7 +34,7 @@
                         <div class="m-3">
                             สินค้ารายการที่ <?=$index?> : <?=$rs['pd_name']?><br>
                             จำนวน <?=$rs['Order_amount']?><br>
-                            ราคาต่อชิ้น <?=$rs['pd_price']?><br>
+                            ราคาต่อหน่วย <?=$rs['pd_price']?><br>
                         </div>
                         <?php
                          $index++;

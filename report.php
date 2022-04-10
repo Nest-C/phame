@@ -51,7 +51,7 @@
           <thead class="table-Info">
             <tr>
               <th scope="col">รายงาน</th>
-              <th scope="col">จำนวน (ชิ้น)</th>
+              <th scope="col">จำนวน (หน่วย)</th>
             </tr>
           </thead>
           <tbody>

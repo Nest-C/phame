@@ -66,10 +66,10 @@
                 <?=number_format($rs['pd_onhand'])?>
               </td>
               <td>
-               <?php if ($rs['pd_onhand'] > 30) : ?>
+               <?php if ($rs['pd_onhand'] > 100) : ?>
                    มีในสต็อก
                 <?php endif ?>
-                <?php if ($rs['pd_onhand'] <= 30) : ?>
+                <?php if ($rs['pd_onhand'] <= 100  && $rs['pd_onhand'] >= 1)   : ?>
                    ใกล้หมด
                 <?php endif ?>
                 <?php if ($rs['pd_onhand'] == 0) : ?>
