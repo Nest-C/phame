@@ -1,4 +1,4 @@
-<div class="col-md-3 mb-3">
+<div class="col-md-3 mb-3 border  hover-shadow">
         <div class="bg-image hover-zoom" style=" height: 30vh;">
             <img src="images/<?=$rs['img_name']?>" />
         </div>

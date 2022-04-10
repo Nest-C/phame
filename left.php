@@ -1,12 +1,12 @@
 <div class="mt-4 ms-3">
 	<div class="list-group">
-        <div class="list-group-item" onclick="go('product.php')">สินค้าทั้งหมด</div>
+        <a  href="#" class="list-group-item pe-auto bg-dark text-light pe-auto" onclick="go('product.php')">สินค้าทั้งหมด</a>
         <?php
 			$qct = "SELECT * FROM category";
 			$ect  = mysqli_query($conn, $qct);
 			while ($ct = mysqli_fetch_array($ect)) {
 		?>
-	  <div class="list-group-item" onclick="go('product.php?ctid=<?=$ct['ct_id']?>')"><?=$ct['ct_name']?></div>
+	  <a href="#" class="list-group-item pe-auto"  onclick="go('product.php?ctid=<?=$ct['ct_id']?>')"><?=$ct['ct_name']?></a>
         <?php
 			}
 		?>
