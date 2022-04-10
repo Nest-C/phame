@@ -73,7 +73,7 @@
                             <a class="nav-link" href="admin_member.php">พนักงาน</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="order.php">ออเดอร์</a>
+                            <a class="nav-link" href="admin_order.php">ออเดอร์</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="report.php">รายงาน</a>
