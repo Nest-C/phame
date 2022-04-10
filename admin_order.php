@@ -48,7 +48,7 @@
             <tr>
               <td ><?=$rs['Order_date']?></td>
               <td><?=sprintf("%05d", $rs['Or_id'])?></td>
-              <td ><?=$rs['pd_name']?></td>
+              <td ><?=$rs['Or_name']?></td>
                 <td ><?=$rs['Or_add']?></td>
                 <td ><?=$rs['Or_total']?></td>
                 <td>
