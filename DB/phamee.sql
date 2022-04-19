@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2022 at 07:02 PM
+-- Generation Time: Apr 19, 2022 at 07:06 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -179,12 +179,27 @@ INSERT INTO `product` (`pd_id`, `pd_name`, `ct_id`, `pd_detail`, `pd_price`, `pd
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `receive`
+--
+
+CREATE TABLE `receive` (
+  `recive_id` int(11) NOT NULL,
+  `Emp_id` int(11) NOT NULL,
+  `recive_date` int(11) NOT NULL,
+  `pd_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `report`
 --
 
 CREATE TABLE `report` (
-  `id` int(11) NOT NULL,
-  `name` int(11) NOT NULL
+  `re_id` int(11) NOT NULL,
+  `re_date` date NOT NULL DEFAULT current_timestamp(),
+  `Or_id` int(11) NOT NULL,
+  `pd_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -270,10 +285,16 @@ ALTER TABLE `product`
   ADD PRIMARY KEY (`pd_id`);
 
 --
+-- Indexes for table `receive`
+--
+ALTER TABLE `receive`
+  ADD PRIMARY KEY (`recive_id`);
+
+--
 -- Indexes for table `report`
 --
 ALTER TABLE `report`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`re_id`);
 
 --
 -- Indexes for table `status`
@@ -322,10 +343,16 @@ ALTER TABLE `product`
   MODIFY `pd_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
+-- AUTO_INCREMENT for table `receive`
+--
+ALTER TABLE `receive`
+  MODIFY `recive_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `report`
 --
 ALTER TABLE `report`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `re_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `status`
