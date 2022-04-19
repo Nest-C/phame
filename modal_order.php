@@ -12,7 +12,7 @@
 		</div>
 		<div class="modal-body" >
 			<form   action="<?=$action?>" method="post" enctype="multipart/form-data">
-			<dvi style="height:40em;" class="row justify-content-center">
+			<dvi style="height:auto;" class="row justify-content-center">
 				<div class="col-6">
 					<label>วันที่ซื้อ</label><br>
 					<label class="mb-3">
@@ -52,7 +52,7 @@
 						<button onclick="addmore()" type="button" style="margin-left: 7em; margin-top:15px" class="btn btn-success btn-floating" >+</button>
 					</div>
 				</dvi>
-				<div align="right">
+				<div style="margin-top:20px" align="right">
 						<input type="submit" class="btn btn-primary" value="<?php echo isset($q) ? "Edit":"Add"?>">
 						<button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
 				</div>

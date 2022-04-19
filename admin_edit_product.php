@@ -8,7 +8,7 @@
 	$onhand = $_POST['onhand'];
 	$pdid = $_GET['pdid'];
 
-	$sql = "UPDATE product SET pd_name = '$name', ct_id = $ctid, pd_detail = '$detail', pd_price = $price, pd_onhand = $onhand WHERE pd_id = $pdid";
+	$sql = "UPDATE product SET pd_name = '$name', ct_id = $ctid, pd_detail = '$detail', pd_price = $price, pd_onhand = $onhand, pd_date = now() WHERE pd_id = $pdid";
 	mysqli_query($conn, $sql);
 	
 	if (!empty($_FILES['img']['name'][0])) { 

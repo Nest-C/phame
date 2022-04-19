@@ -38,6 +38,7 @@
               <th scope="col">ราคา</th>
               <th scope="col">คงคลัง</th>
               <th scope="col">Status</th>
+              <th scope="col">แก้ไขล่าสุด</th>
               <th scope="col">รูปภาพ</th>
               <th scope="col">แก้ไข</th>
               <th scope="col">ลบ</th>
@@ -75,6 +76,9 @@
                 <?php if ($rs['pd_onhand'] == 0) : ?>
                    หมด
                 <?php endif ?>
+              </td>
+              <td>
+                <?=($rs['pd_date'])?>
               </td>
               <td><img src="images/<?=$rs['img_name']?>" width="100" /></td>
               <td  onclick="go('admin_product.php?modal=product&pdid=<?=$rs['pd_id']?>');">
