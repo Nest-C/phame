@@ -10,111 +10,131 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Phamee Shop</title>
-	<link href="stylenew.css" rel="stylesheet" type="text/css" />
+	<link href="dashboard.css" rel="stylesheet" type="text/css" />
 	<?php include "resource.php" ?>
 </head>
 
-<body style="background:#F1E1A6">
-	<?php include "header.php" ?>
-	<!-- Carousel wrapper -->
-<div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel">
-  <!-- Indicators -->
-  <div class="carousel-indicators">
-    <button
-      type="button"
-      data-mdb-target="#carouselBasicExample"
-      data-mdb-slide-to="0"
-      class="active"
-      aria-current="true"
-      aria-label="Slide 1"
-    ></button>
-    <button
-      type="button"
-      data-mdb-target="#carouselBasicExample"
-      data-mdb-slide-to="1"
-      aria-label="Slide 2"
-    ></button>
-    <button
-      type="button"
-      data-mdb-target="#carouselBasicExample"
-      data-mdb-slide-to="2"
-      aria-label="Slide 3"
-    ></button>
-  </div>
-
-  <!-- Inner -->
-  <div class="carousel-inner" align="center">
-    <!-- Single item -->
-    <div class="carousel-item active">
-		<!-- รูปภาพพพพพพ -->
-      <img src="./img/1132303.png" class="d-block w-75 h-75" alt="Sunset Over the City"/>
-      <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-      </div>
-    </div>
-
-    <!-- Single item -->
-    <div class="carousel-item">
-		<!-- รูปภาพพพพพพ -->
-		<img src="./img/1139149.png" class="d-block w-75 h-75" alt="Canyon at Nigh"/>
-		<div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<body style="background:#ffff">
+	<div id="container">
+		<span id="text1"></span>
+		<span id="text2"></span>
 	</div>
-</div>
+		<a href="product.php">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			Click !
+		</a>
+<!-- The SVG filter used to create the merging effect -->
+<svg id="filters">
+	<defs>
+		<filter id="threshold">
+			<!-- Basically just a threshold effect - pixels with a high enough opacity are set to full opacity, and all other pixels are set to completely transparent. -->
+			<feColorMatrix in="SourceGraphic"
+					type="matrix"
+					values="1 0 0 0 0
+									0 1 0 0 0
+									0 0 1 0 0
+									0 0 0 255 -140" />
+		</filter>
+	</defs>
+</svg>
 
-<!-- Single item -->
-<div class="carousel-item">
-		<!-- รูปภาพพพพพพ -->
-      <img src="./img/1194118.png" class="d-block w-75 h-75" alt="Cliff Above a Stormy Sea"/>
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-      </div>
-    </div>
-  </div>
-  <!-- Inner -->
+<script>
+	/*
+	This pen cleverly utilizes SVG filters to create a "Morphing Text" effect. Essentially, it layers 2 text elements on top of each other, and blurs them depending on which text element should be more visible. Once the blurring is applied, both texts are fed through a threshold filter together, which produces the "gooey" effect. Check the CSS - Comment the #container rule's filter out to see how the blurring works!
+*/
 
-  <!-- Controls -->
-  <button class="carousel-control-prev" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-<!-- Carousel wrapper -->
-	<div class="d-flex" style="background:#F1E1A6">
-		<div class="p-2 flex-fill">
-			<?php include "left.php" ?>
-		</div>
-		<div class="p-2 flex-fill">
-			<div class="row justify-content-start">
-				<?php
-						$sql = "SELECT * FROM product INNER JOIN images ON images.pd_id = product.pd_id";
-						if (isset($_GET['q']) || isset($_GET['min']) || isset($_GET['max']) || isset($_GET['ctid'])) {
-							$sql .= " WHERE ";
-							if (isset($_GET['ctid'])) {
-								$sql .= "ct_id = " . $_GET['ctid'];	
-							}
-							if (isset($_GET['q'])) {
-								$sql .= "LOWER(pd_name) LIKE '%" . $_GET['q'] . "%' or product.pd_id = $_GET[q]";
-							}
-							if (isset($_GET['min'])) {
-								$sql .= "pd_price >= ".$_GET['min']." AND pd_price <=" . $_GET['max']; } } $sql
-								.= " GROUP BY images.pd_id"; $ex = mysqli_query($conn, $sql); while
-								($rs = mysqli_fetch_array($ex)) { include "item_product.php"; } ?>
-			</div>
-		</div>
-	</div>
+const elts = {
+	text1: document.getElementById("text1"),
+	text2: document.getElementById("text2")
+};
 
-	<script>
-		const myCarousel = document.querySelector('#myCarousel');
-		const carousel = new mdb.Carousel(myCarousel);
-	</script>
+// The strings to morph between. You can change these to anything you want!
+const texts = [
+	"Welcome",
+	"to",
+	"Phamee",
+	"Shop"
+];
+
+// Controls the speed of morphing.
+const morphTime = 1;
+const cooldownTime = 0.02;
+
+let textIndex = texts.length - 1;
+let time = new Date();
+let morph = 0;
+let cooldown = cooldownTime;
+
+elts.text1.textContent = texts[textIndex % texts.length];
+elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+
+function doMorph() {
+	morph -= cooldown;
+	cooldown = 0;
+	
+	let fraction = morph / morphTime;
+	
+	if (fraction > 1) {
+		cooldown = cooldownTime;
+		fraction = 1;
+	}
+	
+	setMorph(fraction);
+}
+
+// A lot of the magic happens here, this is what applies the blur filter to the text.
+function setMorph(fraction) {
+	// fraction = Math.cos(fraction * Math.PI) / -2 + .5;
+	
+	elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+	elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+	
+	fraction = 1 - fraction;
+	elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+	elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+	
+	elts.text1.textContent = texts[textIndex % texts.length];
+	elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+}
+
+function doCooldown() {
+	morph = 0;
+	
+	elts.text2.style.filter = "";
+	elts.text2.style.opacity = "100%";
+	
+	elts.text1.style.filter = "";
+	elts.text1.style.opacity = "0%";
+}
+
+// Animation loop, which is called every frame.
+function animate() {
+	requestAnimationFrame(animate);
+	
+	let newTime = new Date();
+	let shouldIncrementIndex = cooldown > 0;
+	let dt = (newTime - time) / 1000;
+	time = newTime;
+	
+	cooldown -= dt;
+	
+	if (cooldown <= 0) {
+		if (shouldIncrementIndex) {
+			textIndex++;
+		}
+		
+		doMorph();
+	} else {
+		doCooldown();
+	}
+}
+
+// Start the animation.
+animate();
+</script>
 </body>
 
 </html>
