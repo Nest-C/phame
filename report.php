@@ -30,7 +30,7 @@
           <tbody>
             <tr>
               <th>
-                ยอดขาย
+                ยอดขายรวมทั้งหมด
               </th>
               <th>
                 <?php
@@ -49,9 +49,12 @@
           <h3>รายงานผลสินค้าคงคลัง</h3>
         <table  class="table text-left">
           <thead class="table-Info">
-            <tr>
-              <th scope="col">รายงาน</th>
-              <th scope="col">จำนวน (หน่วย)</th>
+            <tr align="center" >
+              <th scope="col">ชื่อสินค้า</th>
+              <th scope="col">วันที่สินค้าเข้า</th>
+              <th scope="col">จำนวนที่เข้า (กิโลกรัม)</th>
+              <th scope="col">วันที่</th>
+              <th scope="col">คงเหลือ (กิโลกรัม)</th>
             </tr>
           </thead>
           <tbody>
@@ -60,9 +63,18 @@
                   $ex = mysqli_query($conn, $sql);
                   while ($rs = mysqli_fetch_array($ex)) {
                   ?>
-                    <tr>
+                    <tr align="center" >
                       <th>
                           <?=$rs['pd_name']?>
+                      </th>
+                      <th>
+                        <?=$rs['datecome']?>
+                      </th>
+                      <th>
+                        <?=$rs['quantity']?>
+                      </th>
+                      <th>
+                        <?=date("Y-m-d")?>
                       </th>
                       <th>
                         <?=$rs['pd_onhand']?>
