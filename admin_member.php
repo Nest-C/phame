@@ -25,7 +25,7 @@
               	$sql = "SELECT * FROM user WHERE Emp_Name=admin;" ;
               ?>
                 <?php if ($sql ) : ?>
-                <button  type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                <button style="background:#97DBAE" type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
                   +
                 </button>
                 <?php endif ?>

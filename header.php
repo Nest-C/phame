@@ -116,7 +116,7 @@
                     </div>
                 <?php endif ?>
                 <?php if (!isset($_SESSION['username'])) : ?>
-                    <a href="login.php"  class="btn btn-outline-success btn-rounded" data-mdb-ripple-color="dark">Login</a>
+                    <a style="background:#f99e9e" href="login.php"  class="btn btn-outline btn-rounded" data-mdb-ripple-color="dark">Login</a>
                 <?php endif ?>
             </div>
         </div>

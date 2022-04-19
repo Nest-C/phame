@@ -21,7 +21,7 @@
     <div class="container">
       <div>
         <div class="d-flex flex-row-reverse mt-4 pe-5">
-        <button style="background:#97DBAE" type="button" class="btn" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+        <button style="background:#97DBAE" type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
           +
         </button>
         </div>
@@ -30,13 +30,13 @@
       </div>
       <div>
         <table class="table table-borderless table-hover">
-          <thead>
+          <thead align="center">
             <tr style="background:#97DBAE">
               <th scope="col">รหัส</th>
               <th scope="col">ชื่อ</th>
               <th scope="col">ประเภทสินค้า</th>
-              <th scope="col">ราคา</th>
-              <th scope="col">คงคลัง</th>
+              <th scope="col">ราคา (บาท)</th>
+              <th scope="col">คงคลัง (กิโลกรัม)</th>
               <th scope="col">Status</th>
               <th scope="col">แก้ไขล่าสุด</th>
               <th scope="col">รูปภาพ</th>
@@ -44,7 +44,7 @@
               <th scope="col">ลบ</th>
             </tr>
           </thead>
-          <tbody style="background:#C3E5AE">
+          <tbody align="center" style="background:#C3E5AE">
             <?php
 						  	$sql = "SELECT * FROM product INNER JOIN category ON product.ct_id = category.ct_id INNER JOIN images ON images.pd_id = product.pd_id GROUP BY images.pd_id";
 							$ex = mysqli_query($conn, $sql);
@@ -61,7 +61,7 @@
                 <?=$rs['ct_name']?>
               </td>
               <td>
-                <?=number_format($rs['pd_price'])?>
+                <?=number_format($rs['pd_price'])?> 
               </td>
               <td>
                 <?=number_format($rs['pd_onhand'])?>
@@ -80,7 +80,7 @@
               <td>
                 <?=($rs['pd_date'])?>
               </td>
-              <td><img src="images/<?=$rs['img_name']?>" width="100" /></td>
+              <td><img style="max-height:100px;min-height:100px" src="images/<?=$rs['img_name']?>" width="100" /></td>
               <td  onclick="go('admin_product.php?modal=product&pdid=<?=$rs['pd_id']?>');">
                 <button class="btn btn-warning btn-sm px-3">
                   <i class="fas fa-edit"></i>

@@ -12,8 +12,8 @@
     
 	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
+      <div class="modal-content" style="background:#F4BBBB">
+        <div class="modal-header" style="background:#F1E1A6" >
           <h5 class="modal-title" id="exampleModalLabel"><?php echo isset($q) ? "แก้ไขสินค้า":"เพิ่มสินค้า"?></h5>
           <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
         </div>
@@ -59,8 +59,8 @@
 				</div>
 			</div>
 			<div align="right">
-				<input type="submit" class="btn btn-primary" value="<?php echo isset($q) ? "Edit":"Add"?>">
-				<button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+			<input style="background:#c1ffb0" type="submit" class="btn" value="<?php echo isset($q) ? "Edit":"Add"?>">
+				<button style="background:#F1E1A6"  type="button" class="btn" data-mdb-dismiss="modal">Close</button>
 			</div>
 		</form>
         </div>

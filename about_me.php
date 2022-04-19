@@ -6,14 +6,14 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Phamee Shop</title>
   <link href="style1.css" rel="stylesheet" type="text/css" />
-  <link href="css1.css" rel="stylesheet" type="text/css" />
+  <link href="stylenew.css" rel="stylesheet" type="text/css" />
   <?php include "resource.php" ?>
 </head>
 
-<body >
+<body style="background:#F1E1A6">
 	<?php include "header.php" ?>
-    <div style="min-height: 100vh;">
-    <div class="container" style="margin: 20px auto; background: white; box-shadow: 0px 2px 14px 0px rgba( 0, 0, 0, .1); height: 500px;">
+    <div style="min-height: 100vh;" > 
+    <div class="container" style="margin: 20px auto; background:#fff4c9; box-shadow: 0px 2px 14px 0px rgba( 0, 0, 0, .1); height: 500px;">
     <div style="padding: 1px;">
     <center>
     <div style="font-size: 25px; padding: 20px;"> เกี่ยวกับเรา </div>

@@ -25,7 +25,7 @@
       <div class="container">
         <div>
           <div class="d-flex flex-row-reverse mt-4 pe-5">
-          <button  type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+          <button style="background:#97DBAE" type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
             +
           </button>
           </div>

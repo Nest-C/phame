@@ -12,8 +12,8 @@
 	?>
 	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-		<div class="modal-content">
-		<div class="modal-header">
+		<div class="modal-content" style="background:#F4BBBB">
+		<div class="modal-header" style="background:#F1E1A6" >
 			<h5 class="modal-title" id="exampleModalLabel">รายละเอียด</h5>
 			<button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
 		</div>
@@ -42,7 +42,8 @@
                         ?><br>
                     <label>รวมราคา  :  <?php echo $q['Or_total'] ?> </label><br>
 				<div align="right">
-				    <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+				
+				<button style="background:#F1E1A6"  type="button" class="btn" data-mdb-dismiss="modal">Close</button>
 			    </div>
 			</form>
 			</div>
