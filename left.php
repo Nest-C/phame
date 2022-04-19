@@ -1,6 +1,6 @@
-<div class="mt-4 ms-3">
+<div style="width:13em">
 	<div class="list-group">
-        <a  href="#" class="list-group-item pe-auto bg-dark text-light pe-auto" onclick="go('product.php')">สินค้าทั้งหมด</a>
+        <a  href="#" class="list-group-item pe-auto bg-dark text-light" onclick="go('product.php')">สินค้าทั้งหมด</a>
         <?php
 			$qct = "SELECT * FROM category";
 			$ect  = mysqli_query($conn, $qct);
@@ -11,10 +11,8 @@
 			}
 		?>
     </div>
-    
-    
-    </div>
 </div>
+
 <script>
 	function filter_price(e) {
 		if (e.keyCode === 13) {

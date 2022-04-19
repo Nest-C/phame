@@ -16,26 +16,26 @@
   <body>
     <?php include "header.php" ?>
 	<div class="d-flex">
-        <div class="p-2 flex-shrink-1">
-          <?php include "left.php" ?>
-        <div class="p-2 w-100" >
-			<div class="row" style="padding:2.5rem">
+		<div class="p-2 ">
+			<?php include "left.php" ?>
+		</div>
+		<div class="p-2 ">
+			<div class="row justify-content-start">
 				<?php
-				$sql = "SELECT * FROM product INNER JOIN images ON images.pd_id = product.pd_id";
-				if (isset($_GET['q']) || isset($_GET['min']) || isset($_GET['max']) || isset($_GET['ctid'])) {
-					$sql .= " WHERE ";
-					if (isset($_GET['ctid'])) {
-						$sql .= "ct_id = " . $_GET['ctid'];	
-					}
-					if (isset($_GET['q'])) {
-						$sql .= "LOWER(pd_name) LIKE '%" . $_GET['q'] . "%' or product.pd_id = $_GET[q]";
-					}
-					} $sql
-					.= " GROUP BY images.pd_id"; $ex = mysqli_query($conn, $sql); while
-					($rs = mysqli_fetch_array($ex)) { include "item_product.php"; } ?>
+						$sql = "SELECT * FROM product INNER JOIN images ON images.pd_id = product.pd_id";
+						if (isset($_GET['q']) || isset($_GET['min']) || isset($_GET['max']) || isset($_GET['ctid'])) {
+							$sql .= " WHERE ";
+							if (isset($_GET['ctid'])) {
+								$sql .= "ct_id = " . $_GET['ctid'];	
+							}
+							if (isset($_GET['q'])) {
+								$sql .= "LOWER(pd_name) LIKE '%" . $_GET['q'] . "%' or product.pd_id = $_GET[q]";
+							}
+							 } $sql
+								.= " GROUP BY images.pd_id"; $ex = mysqli_query($conn, $sql); while
+								($rs = mysqli_fetch_array($ex)) { include "item_product.php"; } ?>
 			</div>
 		</div>
-    </div>
-    <div class="clear"></div>
+	</div>
   </body>
 </html>
