@@ -10,11 +10,11 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Phamee Shop</title>
   <link href="style1.css" rel="stylesheet" type="text/css" />
-  <link href="css1.css" rel="stylesheet" type="text/css" />
+  <link href="stylenew.css" rel="stylesheet" type="text/css" />
   <?php include "resource.php" ?>
 </head>
 
-<body >
+<body style="background:#F1E1A6">
 	<?php include "header.php" ?>
 	<?php include "modal_member.php" ?>
   <div style="min-height: 100vh">
@@ -35,9 +35,9 @@
           <div class="clear"></div>
         </div>
         <div>
-          <table class="table align-middle">
+          <table class="table table-borderless table-hover">
             <thead>
-              <tr class="table-info">
+              <tr style="background:#97DBAE">
               <th scope="col">รหัส</th>
               <th scope="col">ชื่อ</th>
               <th scope="col">เบอร์ติดต่อ</th>
@@ -45,7 +45,7 @@
               <th scope="col">ลบ</th>
               </tr>
             </thead>
-            <tbody >
+            <tbody style="background:#C3E5AE">
               <?php
 						  	$sql = "SELECT * FROM user";
 							  $ex = mysqli_query($conn, $sql);

@@ -10,10 +10,10 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Phamee Shop</title>
   <link href="style1.css" rel="stylesheet" type="text/css" />
-  <link href="css1.css" rel="stylesheet" type="text/css" />
+  <link href="stylenew.css" rel="stylesheet" type="text/css" />
   <?php include "resource.php" ?>
 </head>
-<body>
+<body style="background:#F1E1A6">
   
 	<?php
     include "header.php" 
@@ -33,8 +33,8 @@
           <div class="clear"></div>
         </div>
         <div>
-          <table class="table align-middle">
-            <thead class="table-info">
+          <table class="table table-borderless table-hover">
+            <thead style="background:#97DBAE">
               <tr>
                 <th scope="col">รหัส</th>
                 <th scope="col">ชื่อ</th>
@@ -42,7 +42,7 @@
                 <th scope="col">ลบ</th>
               </tr>
             </thead>
-            <tbody >
+            <tbody style="background:#C3E5AE">
               <?php
                  $sql = "SELECT * FROM category";
                  $ex = mysqli_query($conn, $sql);

@@ -1,6 +1,6 @@
-<div style="width:13em">
+<div style="width:13em;margin-top:10px">
 	<div class="list-group">
-        <a  href="#" class="list-group-item pe-auto bg-dark text-light" onclick="go('product.php')">สินค้าทั้งหมด</a>
+        <a  style="background-color:#F4BBBB" href="#" class="list-group-item pe-auto text-light" onclick="go('product.php')">สินค้าทั้งหมด</a>
         <?php
 			$qct = "SELECT * FROM category";
 			$ect  = mysqli_query($conn, $qct);

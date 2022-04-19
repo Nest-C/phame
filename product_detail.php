@@ -11,12 +11,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Phamee Shop</title>
     <link href="zoom.css" rel="stylesheet" type="text/css" />
+	<link href="stylenew.css" rel="stylesheet" type="text/css" />
     <?php include "resource.php" ?>
    
 </head>
 
 
-<body>
+<body style="background:#F1E1A6">
     <?php include "header.php" ?>
     <div class="d-flex">
         <div class="p-2">
@@ -33,7 +34,7 @@
 			$rs = mysqli_fetch_assoc($ex);
         }
 	?>
-                    <div class="row" style="margin-top: -1rem">
+                    <div class="row" style="margin-top: -2rem">
                         <div class="col-4">
                             <div class="card text-center">
                                 <div class="card-body">

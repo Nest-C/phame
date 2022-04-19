@@ -8,18 +8,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Phamee Shop</title>
 <link href="style1.css" rel="stylesheet" type="text/css" />
-<link href="css1.css" rel="stylesheet" type="text/css" />
+<link href="stylenew.css" rel="stylesheet" type="text/css" />
 <script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
 <?php include "resource.php" ?>
 </head>
 
-<body>
+<body style="background:#F1E1A6">
 	<?php include "header.php" ?>
 	<?php include "modal_order_detail.php" ?>
 	<?php include "modal_order.php" ?>
-    <div style="min-height: 100vh">
-        <div class="container" style="margin: 20px auto; background: white;">
-            <div align="center" >
+    <div style="min-height: 100vh" >
+        <div class="container" style="margin: 20px auto; background: #F1E1A6;">
+            <div align="center" style="background:#F1E1A6">
             <h2>ออเดอร์</h2>
             <div class="d-flex flex-row-reverse m-4">
               <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal1">
@@ -28,7 +28,7 @@
             </div>
         <table class="table table-borderless table-hover">
         <thead>
-          <tr class="table-info">
+          <tr style="background:#97DBAE">
             <th scope="col">วันที่ซื้อ</th>
             <th scope="col">รหัสออเดอร์</th>
             <th scope="col">ชื่อลูกค้า</th>
@@ -38,7 +38,7 @@
             <th scope="col">ลบ</th>
           </tr>
         </thead>
-        <tbody >
+        <tbody style="background:#C3E5AE">
           <?php
             $sql = "SELECT * FROM `order`";
             $ex = mysqli_query($conn, $sql);

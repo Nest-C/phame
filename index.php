@@ -10,14 +10,13 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Phamee Shop</title>
-	<link href="style1.css" rel="stylesheet" type="text/css" />
-	<link href="css1.css" rel="stylesheet" type="text/css" />
+	<link href="stylenew.css" rel="stylesheet" type="text/css" />
 	<?php include "resource.php" ?>
 </head>
 
-<body>
+<body style="background:#F1E1A6">
 	<?php include "header.php" ?>
-	<div class="d-flex">
+	<div class="d-flex" style="background:#F1E1A6">
 		<div class="p-2 flex-fill">
 			<?php include "left.php" ?>
 		</div>

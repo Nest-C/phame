@@ -1,0 +1,44 @@
+  body {
+    background:#F4BBBB;
+  }
+  
+  .box {
+    transition: box-shadow .3s;
+    border-radius:10px;
+    border: 1px solid #F1E1A6;
+    background: #fed9d9;
+  }
+  .box:hover {
+    box-shadow: 0 0 11px #F4BBBB; 
+    cursor:pointer
+  }
+
+  .nev-color {
+    background: #F4BBBB;
+}
+
+.myButton {
+	box-shadow: 2px 2px 0px 0px #c1ffb0;
+	background-color:#faedbe;
+	border-radius:28px;
+	border:1px solid #97dbae;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:16px;
+	padding:8px 20px;
+	text-decoration:none;
+    margin-bottom: 5px;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.myButton:hover {
+	background-color:#f1e1a6;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+        
+        

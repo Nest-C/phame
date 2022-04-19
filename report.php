@@ -10,24 +10,38 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Phamee Shop</title>
   <link href="style1.css" rel="stylesheet" type="text/css" />
-  <link href="css1.css" rel="stylesheet" type="text/css" />
+  <link href="stylenew.css" rel="stylesheet" type="text/css" />
   <?php include "resource.php" ?>
 </head>
 
-<body >
+<body style="background:#F1E1A6">
 	<?php include "header.php" ?>
-    <div style="min-height: 100vh">
-        <div class="container" style="margin: 20px auto; background: white;">
+    <div style="min-height: 100vh" >
+        <div class="container" style="margin: 20px auto; background:#F1E1A6;">
         <div align="center" class="divider">
           <h3>รายงานผลยอดขาย</h3>
-        <table  class="table text-center">
-          <thead class="table-Warning">
+        <table  class="table table-borderless table-hover">
+          <thead style="background:#97DBAE">
             <tr>
               <th scope="col">รายงาน</th>
               <th scope="col">จำนวน (บาท)</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody style="background:#C3E5AE">
+            <?php
+              $sql = "SELECT product.*, product.pd_price*Order_amount AS total_price FROM `order_detail`  INNER JOIN `product` ON order_detail.pd_id = `product`.pd_id;";
+              $ex = mysqli_query($conn, $sql);
+                while ($rs = mysqli_fetch_array($ex)) {
+            ?>
+                  <tr>
+                    <th>
+                      <?=($rs['pd_name'])?>
+                    </th>
+                    <th>
+                      <?=number_format($rs['total_price'])?>
+                    </th>
+                  </tr>
+           <?php }?>
             <tr>
               <th>
                 ยอดขายรวมทั้งหมด
@@ -45,10 +59,10 @@
           </tbody>
         </table> 
 
-        <div align="center" class="divider">
+        <div align="center" class="divider mt-5">
           <h3>รายงานผลสินค้าคงคลัง</h3>
-        <table  class="table text-left">
-          <thead class="table-Info">
+        <table  class="table table-borderless table-hover">
+          <thead style="background:#97DBAE">
             <tr align="center" >
               <th scope="col">ชื่อสินค้า</th>
               <th scope="col">วันที่สินค้าเข้า</th>
@@ -57,7 +71,7 @@
               <th scope="col">คงเหลือ (กิโลกรัม)</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody  style="background:#C3E5AE">
             <?php
                   $sql = "SELECT * FROM `product`;";
                   $ex = mysqli_query($conn, $sql);

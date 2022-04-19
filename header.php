@@ -6,7 +6,7 @@
     }
 
 ?> 
-    <div class="bg-dark p-2 text-dark bg-opacity-25" >
+    <div style="background:#f99e9e">
             <div
             class="bg-image"
             style="
@@ -22,7 +22,7 @@
         </div>
     </div>  
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg nev-color">
         <!-- Container wrapper -->
         <div class="container-fluid">
             <!-- Toggle button -->
@@ -98,9 +98,9 @@
             <!-- Right elements -->
             <div class="d-flex align-items-center me-3">
                 <?php if (isset($_SESSION['username'])) : ?>
-                    <div class="dropdown">
+                    <div class="dropdown" style="background:#F1E1A6">
                         <button
-                            class="btn btn-primary dropdown-toggle"
+                            class="btn dropdown-toggle"
                             type="button"
                             id="dropdownMenuButton"
                             data-mdb-toggle="dropdown"
@@ -108,8 +108,8 @@
                         >
                         <?php echo $_SESSION['username']; ?>
                         </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item" href="#">My profile</a></li>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background:#efe5c1">
+                            <li><a class="dropdown-item" href="admin_member.php">Member</a></li>
                             <li><a class="dropdown-item" href="index.php?logout='1'">Logout</a></li>
                         </ul>
                          
