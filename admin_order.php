@@ -40,7 +40,7 @@
         </thead>
         <tbody >
           <?php
-            $sql = "SELECT * FROM `order` INNER JOIN product ON `product`.pd_id = `order`.pd_id";
+            $sql = "SELECT * FROM `order`";
             $ex = mysqli_query($conn, $sql);
             while ($rs = mysqli_fetch_array($ex)) {
             ?>
@@ -57,7 +57,7 @@
                 </button>
                 </td>
                 <td>
-                <buttn onclick="confirm('Are you sure to remove this order?') ? go('admin_delete_member.php?orid=<?=$rs['Or_id']?>'):null" class="btn btn-danger btn-sm px-3">
+                <buttn onclick="confirm('Are you sure to remove this order?') ? go('admin_delete_order.php?orid=<?=$rs['Or_id']?>'):null" class="btn btn-danger btn-sm px-3">
                   <i class="fas fa-times"></i>
                 </buttn>
               </td>

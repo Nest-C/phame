@@ -21,8 +21,13 @@
             $result = mysqli_query($conn, $query);
 
             if (mysqli_num_rows($result) == 1) {
+               
+                $sqluser  = "INSERT INTO `login` (Emp_id, Log_date) VALUES (Emp_id, now())";
+                mysqli_query($conn, $sqluser); 
+
                 $_SESSION['username'] = $username;
                 $_SESSION['success'] = "Your are now logged in";
+
                 header("location: index.php");
             } else {
                 array_push($errors, "Wrong Username or Password");
@@ -34,6 +39,7 @@
             $_SESSION['error'] = "Username & Password is required";
             header("location: login.php");
         }
+        
     }
 
 ?>

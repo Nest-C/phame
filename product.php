@@ -28,13 +28,9 @@
 						$sql .= "ct_id = " . $_GET['ctid'];	
 					}
 					if (isset($_GET['q'])) {
-						$sql .= "LOWER(pd_name) LIKE '%" . $_GET['q'] . "%' ";
-						if (isset($_GET['min'])) {
-							$sql .= "AND ";
-						}
+						$sql .= "LOWER(pd_name) LIKE '%" . $_GET['q'] . "%' or product.pd_id = $_GET[q]";
 					}
-					if (isset($_GET['min'])) {
-						$sql .= "pd_price >= ".$_GET['min']." AND pd_price <=" . $_GET['max']; } } $sql
+					} $sql
 					.= " GROUP BY images.pd_id"; $ex = mysqli_query($conn, $sql); while
 					($rs = mysqli_fetch_array($ex)) { include "item_product.php"; } ?>
 			</div>

@@ -1,14 +1,8 @@
+<?php
+	$action = "admin_add_order.php";
+	$sql = "SELECT * FROM product";
+?>
 <div>
-    <?php
-		$action = "admin_add_member.php";
-		if (isset($_GET['mbid'])) {
-			$empid = $_GET['mbid'];
-			$action = "admin_edit_member.php?empid=" . $empid;
-			$qqq = "SELECT * FROM user WHERE Emp_id = $empid";
-			$qq = mysqli_query($conn, $qqq);
-			$q = mysqli_fetch_assoc($qq);
-		}
-	?>
 	<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -16,32 +10,58 @@
 			<h5 class="modal-title" id="exampleModalLabel">เพิ่มรายการสั่งซื้อ</h5>
 			<button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
 		</div>
-		<div class="modal-body">
-			<form action="<?=$action?>" method="post" enctype="multipart/form-data">
-				<label>วันที่ซื้อ</label><br>
-                <label class="mb-3">
-                <?php
-                    echo gmdate('Y-m-d h:i:s', time());
-                    ?></label><br>
-                <label>ชื่อลูกค้า</label><br>
-				<input type="text" name="name" required placeholder="ชื่อผู้ใช้" value="<?php echo isset($q) ? $q['Emp_Name']:""?>"><br><br>
-				<label>Phone</label><br>
-				<input type="text" name="phone" required placeholder="เบอร์โทร" value="<?php echo isset($q) ? $q['Emp_Phone']:""?>"><br><br>
-				<label>Address</label><br>
-				<input type="text" name="address" required placeholder="ที่อยู่" value="<?php echo isset($q) ? $q['Emp_Add']:""?>"><br><br>
-				<label>สินค้า</label><br>
-				<input type="text" name="address" required placeholder="ที่อยู่" value="<?php echo isset($q) ? $q['Emp_Add']:""?>"><br><br>
+		<div class="modal-body" >
+			<form   action="<?=$action?>" method="post" enctype="multipart/form-data">
+			<dvi style="height:40em;" class="row justify-content-center">
+				<div class="col-6">
+					<label>วันที่ซื้อ</label><br>
+					<label class="mb-3">
+						<?php
+							echo gmdate('d/m/Y h:i', time());
+						?>
+					</label><br>
+					<label>ชื่อลูกค้า</label><br>
+					<input type="text" name="name"  placeholder="ชื่อผู้ใช้" value=""><br><br>
+					<label>Phone</label><br>
+					<input type="text" name="phone"  placeholder="เบอร์โทร" value=""><br><br>
+					<label>Address</label><br>
+					<input type="text" name="address"  placeholder="ที่อยู่" value=""><br><br>
+					
+					</div>
+					<div class="col-6">
+						<div id="add_more" class="row" style="">
+							<label  style="margin-top:15px" for="cars">สินค้า</label>
+							<select name="productItem[]" id="productItem">
+								<?php
+									$ex = mysqli_query($conn, $sql); while
+									($rs = mysqli_fetch_array($ex)) {  
+										?>
+											<option value="<?=$rs['pd_id']?>">
+												<?=$rs['pd_name']?>	
+											</option>
+										<?php
+											}
+										?>
+							</select>
+							<label style="padding-top:16px">จำนวน</label><br>
+							<input type="text" name="kilograms[]"  placeholder="จำนวน (กก.)" value=""><br>
+						</div>
+						<div id="moremore">
+
+						</div>
+						<button onclick="addmore()" type="button" style="margin-left: 7em; margin-top:15px" class="btn btn-success btn-floating" >+</button>
+					</div>
+				</dvi>
 				<div align="right">
-				<input type="submit" class="btn btn-primary" value="<?php echo isset($q) ? "Edit":"Add"?>">
-				<button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
-			</div>
+						<input type="submit" class="btn btn-primary" value="<?php echo isset($q) ? "Edit":"Add"?>">
+						<button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+				</div>
 			</form>
 			</div>
 		</div>
 		</div>
 	</div>
 	</div>
-
 </div>
 
 <script>
@@ -56,4 +76,9 @@
 				go("admin_order.php");
 			})
 	})()
+	function addmore() {
+		let moreitem = document.getElementById('add_more')
+		let m_more = moreitem.cloneNode(true)
+		document.getElementById('moremore').appendChild(m_more)
+	}
 </script>
