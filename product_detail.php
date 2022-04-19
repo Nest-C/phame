@@ -64,12 +64,12 @@
                                         </div>
 
                                         <div>ราคา <div class="badge bg-primary">
-                                                <?=$rs['pd_price']?>
-                                            </div>
+                                                <?=$rs['pd_price']?> 
+                                            </div> บาท
                                         </div>
                                         <div>คงเหลือ <div class="badge bg-dark">
-                                                <?=$rs['pd_onhand']?>
-                                            </div>
+                                                <?=$rs['pd_onhand']?> 
+                                            </div> กิโลกรัม
                                         </div>
                                     </div>
 
