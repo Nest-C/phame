@@ -28,7 +28,7 @@
                 $_SESSION['username'] = $username;
                 $_SESSION['success'] = "Your are now logged in";
 
-                header("location: index.php");
+                header("location: product.php");
             } else {
                 array_push($errors, "Wrong Username or Password");
                 $_SESSION['error'] = "Wrong Username or Password!";

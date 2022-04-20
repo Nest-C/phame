@@ -2,7 +2,7 @@
     if (isset($_GET['logout'])) {
         session_destroy();
         unset($_SESSION['username']);
-        header('location: index.php');
+        header('location: product.php');
     }
 
 ?>
@@ -46,12 +46,12 @@
                     </button>
                     <div class="dropdown-content">
                         <a href="admin_member.php">Member</a>
-                        <a href="index.php?logout='1'">Logout</a>
+                        <a href="product.php?logout='1'">Logout</a>
                     </div>
                 </div>
                 <?php endif ?>
                 <?php if (!isset($_SESSION['username'])) : ?>
-                <a href="#" class="myButton" onclick="go('login.php');">login</a>
+                    <a href="#" class="myButton" onclick="go('login.php');">login</a>
                 <?php endif ?>
             </div>
         </div>
