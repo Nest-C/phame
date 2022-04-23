@@ -7,6 +7,9 @@
 
     // Create Connection
     $conn = mysqli_connect($servername, $username, $password, $dbname);
+	mysqli_set_charset($conn, "utf8");
+	date_default_timezone_set("Asia/Bangkok");
+	$date = date("Y_m_d_H_i_s");
 
     // Check connection
     if (!$conn) {
