@@ -19,33 +19,109 @@
 		</div>
 		<div class="modal-body">
 			<!-- <form action="<?=$action?>" method="post" enctype="multipart/form-data"> -->
-                <form enctype="multipart/form-data">
-                    <label>Order ID  :  0000<?php echo $q['Or_id'] ?></label><br>
-                    <label>วันที่สั่งซื้อ  :  <?php echo $q['Order_date'] ?></label><br>
-                    <label>ชื่อ  :  <?php echo $q['Or_name'] ?> </label><br>
-                    <label>ที่อยู่  :  <?php echo $q['Or_add'] ?> </label><br>
-                    <label>เบอร์โทร  :  <?php echo $q['Or_tel'] ?> </label><br>
-                    <?php
-                        $sql = "SELECT * FROM `order_detail` INNER JOIN `product` ON `product`.pd_id = `order_detail`.pd_id";
-                        $ex = mysqli_query($conn, $sql);
-                        $index = 1;
-                        while ($rs = mysqli_fetch_array($ex)) {
-                            ?>
-                        <div class="m-3">
-                            สินค้ารายการที่ <?=$index?> : <?=$rs['pd_name']?><br>
-                            จำนวน <?=$rs['Order_amount']?><br>
-                            ราคาต่อหน่วย <?=$rs['pd_price']?><br>
-                        </div>
-                        <?php
-                         $index++;
-                        }
-                        ?><br>
-                    <label>รวมราคา  :  <?php echo $q['Or_total'] ?> </label><br>
+				<table class="table align-left mb-0 bg-while">
+					<tbody>
+						<tr>
+							<td style="background:#97DBAE">
+								Order ID
+							</td>
+							<td style="background:#ffffff">
+								000<?php echo $q['Or_id'] ?>
+							</td>
+						</tr>
+						<tr>
+							<td style="background:#97DBAE">
+								วันที่สั่งซื้อ
+							</td>
+							<td style="background:#ffffff">
+								<?php echo $q['Order_date'] ?>
+							</td>
+						</tr>
+						<tr>
+							<td style="background:#97DBAE">
+								ชื่อ
+							</td>
+							<td style="background:#ffffff">
+								<?php echo $q['Or_name'] ?>
+							</td>
+						</tr>
+						<tr>
+							<td style="background:#97DBAE">
+								ที่อยู่
+							</td>
+							<td style="background:#ffffff">
+								<?php echo $q['Or_add'] ?>
+							</td>
+						</tr>
+						<tr>
+							<td style="background:#97DBAE">
+								เบอร์โทร
+							</td>
+							<td style="background:#ffffff">
+								<?php echo $q['Or_tel'] ?>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<div style="margin:5px;margin-top:10px; color:black">
+					รายการสินค้า
+				</div>
+
+				<table style="margin-top:5px" class="table align-left mb-0 bg-white">
+					<thead style="background:#97DBAE">
+						<tr>
+							<th>ชื่อสินค้า</th>
+							<th>ราคา</th>
+							<th>จำนวน</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+							$sql = "SELECT * FROM `order_detail` INNER JOIN `product` ON `product`.pd_id = `order_detail`.pd_id";
+							$ex = mysqli_query($conn, $sql);
+							$index = 1;
+							while ($rs = mysqli_fetch_array($ex)) {
+								?>
+								<tr>
+									<td class="bg-light">
+										<?=$rs['pd_name']?>
+									</td>
+									<td style="background:#ffffff">
+										<?=$rs['Order_amount']?>
+									</td>
+									<td style="background:#ffffff">
+										<?=$rs['pd_price']?>
+									</td>
+								</tr>
+
+							<?php
+							$index++;
+							}
+							?>
+						
+					</tbody>
+				</table>
+						
+				<table style="margin-top:20px;background:#fed9d9;font-weight: bold;font-size: 20px"  class="table align-left mb-0">
+					<tbody>
+						<tr>
+							<td>
+								รวมราคา
+							</td>
+							<td>
+								<?php echo $q['Or_total'] ?> 
+							</td>
+							<td>
+								บาท
+							</td>
+						</tr>
+					</tbody>
+				</table>
+                
 				<div align="right">
-				
-				<button style="background:#F1E1A6"  type="button" class="btn" data-mdb-dismiss="modal">Close</button>
+					<button style="background:#F1E1A6;margin-top:20px"  type="button" class="btn" data-mdb-dismiss="modal">Close</button>
 			    </div>
-			</form>
 			</div>
 		</div>
 		</div>
