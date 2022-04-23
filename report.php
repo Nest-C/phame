@@ -66,7 +66,7 @@
             <tr align="center" >
               <th scope="col">ชื่อสินค้า</th>
               <th scope="col">วันที่สินค้าเข้า</th>
-              <th scope="col">จำนวนที่เข้า (กิโลกรัม)</th>
+              <th scope="col">จำนวนสินค้าที่รับเข้า (กิโลกรัม)</th>
               <th scope="col">วันที่</th>
               <th scope="col">คงเหลือ (กิโลกรัม)</th>
             </tr>

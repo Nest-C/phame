@@ -7,8 +7,9 @@
 	$detail = nl2br($_POST['detail']);
 	$price = $_POST['price'];
 	$onhand = $_POST['onhand'];
+	$quantity = $onhand;
 	
-	$sql = "INSERT INTO product (pd_name, ct_id, pd_detail, pd_price,  pd_onhand, pd_date, datecome) VALUES ('$name', $ctid, '$detail', $price,  $onhand, now(), now())";
+	$sql = "INSERT INTO product (pd_name, ct_id, pd_detail, pd_price,  pd_onhand, pd_date, datecome, quantity) VALUES ('$name', $ctid, '$detail', $price,  $onhand, now(), now(), $quantity)";
 	mysqli_query($conn, $sql);
 	
 	$q = "SELECT max(pd_id) FROM product";

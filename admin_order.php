@@ -33,7 +33,7 @@
             <th scope="col">รหัสออเดอร์</th>
             <th scope="col">ชื่อลูกค้า</th>
             <th scope="col">ที่อยู่</th>
-            <th scope="col">ราคาทั้งหมด</th>
+            <th scope="col">ยอดซื้อทั้งหมด</th>
             <th scope="col">รายละเอียด</th>
             <th scope="col">ลบ</th>
           </tr>
