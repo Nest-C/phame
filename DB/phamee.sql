@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 23, 2022 at 05:48 PM
+-- Generation Time: Apr 24, 2022 at 06:36 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -60,8 +60,9 @@ CREATE TABLE `images` (
 --
 
 INSERT INTO `images` (`img_id`, `pd_id`, `img_name`) VALUES
-(27, 12, 'Pd_12_2022_04_23_22_46_01_0.jpg'),
-(28, 13, 'Pd_13_2022_04_23_22_46_27_0.jpg');
+(28, 2, 'Pd_13_2022_04_23_22_46_27_0.jpg'),
+(34, 1, 'Pd_1_2022_04_24_22_46_48_0.jpg'),
+(35, 3, 'Pd_3_2022_04_24_22_47_05_0.jpg');
 
 -- --------------------------------------------------------
 
@@ -85,7 +86,10 @@ INSERT INTO `login` (`log_id`, `Emp_id`, `Log_date`) VALUES
 (3, 0, '2022-04-20 02:23:36'),
 (4, 0, '2022-04-20 09:39:21'),
 (5, 0, '2022-04-20 09:42:19'),
-(6, 0, '2022-04-23 22:09:12');
+(6, 0, '2022-04-23 22:09:12'),
+(7, 0, '2022-04-23 22:49:58'),
+(8, 0, '2022-04-24 20:02:24'),
+(9, 0, '2022-04-24 21:57:27');
 
 -- --------------------------------------------------------
 
@@ -107,10 +111,10 @@ CREATE TABLE `order` (
 --
 
 INSERT INTO `order` (`Or_id`, `Or_name`, `Or_add`, `Or_tel`, `Or_total`, `Order_date`) VALUES
-(1, 'a', '123 a b c', '011345', 600, '2022-04-05 03:02:36'),
-(2, 'BeDeeN', 'pacha utid 125', '05948150', 400, '2022-04-09 11:07:44'),
-(13, 'nest', '12345 azxcvb1dsa', '012345678', 1500, '2022-04-19 17:44:02'),
-(14, 'เนส', 'Mars', '084569987', 300, '2022-04-19 18:30:34');
+(15, 'ผ้า2', '64/107 ซอยวัดใหญ่  หมู่บ้านวนารมย์', '0952193393', 600, '2022-04-23 22:50:34'),
+(16, '13414', '4242141', '214214', 120, '2022-04-24 22:40:31'),
+(17, '1', '3', '2', 900, '2022-04-24 22:48:28'),
+(18, '2', '4', '3', 100, '2022-04-24 22:48:53');
 
 -- --------------------------------------------------------
 
@@ -130,12 +134,11 @@ CREATE TABLE `order_detail` (
 --
 
 INSERT INTO `order_detail` (`Or_id`, `pd_id`, `pd_price`, `Order_amount`) VALUES
-(1, 2, 100, 3),
-(1, 5, 100, 5),
-(1, 6, 100, 5),
-(13, 4, 150, 10),
-(14, 4, 150, 1),
-(14, 5, 150, 1);
+(15, 1, 10, 10),
+(15, 2, 50, 10),
+(16, 3, 120, 1),
+(17, 2, 10, 90),
+(18, 2, 10, 10);
 
 -- --------------------------------------------------------
 
@@ -160,8 +163,9 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`pd_id`, `pd_name`, `ct_id`, `pd_detail`, `pd_price`, `pd_onhand`, `pd_date`, `datecome`, `quantity`) VALUES
-(12, 'ผ้า1', 1, 'ผ้า', 50, 250, '2022-04-23 22:46:01.0', '2022-04-23', 0),
-(13, 'ผ้า2', 1, 'ผ้า2', 10, 500, '2022-04-23 22:46:27.0', '2022-04-23', 0);
+(1, 'ผ้า1', 1, 'ผ้า', 50, 240, '2022-04-24 22:46:48.0', '2022-04-23', 240),
+(2, 'ผ้า2', 1, 'ผ้า2', 10, 390, '2022-04-23 22:46:27.0', '2022-04-23', 490),
+(3, 'GGWPMyTeam BBMSonic', 1, '45', 120, 0, '2022-04-24 22:47:16.0', '2022-04-24', 1);
 
 -- --------------------------------------------------------
 
@@ -309,25 +313,25 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `log_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `log_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `Or_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `Or_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `pd_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `pd_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `receive`

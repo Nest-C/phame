@@ -3,12 +3,9 @@
 		$action = "admin_add_member.php";
 		if (isset($_GET['orid'])) {
 			$orid = $_GET['orid'];
-            $qqq = "SELECT * FROM `order` INNER JOIN order_detail ON `order_detail`.Or_id = `order`.Or_id";
+            $qqq = "SELECT * FROM `order`  WHERE `order`.Or_id = $orid";
 			$qq = mysqli_query($conn, $qqq);
 			$q = mysqli_fetch_assoc($qq);
-            $rs = mysqli_fetch_array($qq)
-           ;
-		}
 	?>
 	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -72,13 +69,13 @@
 					<thead style="background:#97DBAE">
 						<tr>
 							<th>ชื่อสินค้า</th>
-							<th>ราคา</th>
 							<th>จำนวน</th>
+							<th>ราคา</th>
 						</tr>
 					</thead>
 					<tbody>
 						<?php
-							$sql = "SELECT * FROM `order_detail` INNER JOIN `product` ON `product`.pd_id = `order_detail`.pd_id";
+							$sql = "SELECT * FROM `order_detail` INNER JOIN `product` ON `product`.pd_id = `order_detail`.pd_id  WHERE order_detail.Or_id = $orid ";
 							$ex = mysqli_query($conn, $sql);
 							$index = 1;
 							while ($rs = mysqli_fetch_array($ex)) {
@@ -127,7 +124,9 @@
 		</div>
 	</div>
 	</div>
-
+		<?php
+			}
+		?>
 </div>
 
 <script>

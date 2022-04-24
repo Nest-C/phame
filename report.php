@@ -24,12 +24,12 @@
           <thead style="background:#97DBAE">
             <tr>
               <th scope="col">รายงาน</th>
-              <th scope="col">จำนวน (บาท)</th>
+                <th scope="col">จำนวน (บาท)</th>
             </tr>
           </thead>
           <tbody style="background:#C3E5AE">
             <?php
-              $sql = "SELECT product.*, product.pd_price*Order_amount AS total_price FROM `order_detail` INNER JOIN `product` ON order_detail.pd_id = `product`.pd_id;";
+              $sql = "SELECT product.*,product.pd_price*Order_amount AS total_price FROM `order_detail` INNER JOIN `product` ON order_detail.pd_id = `product`.pd_id INNER JOIN `order` ON order_detail.Or_id = `order`.Or_id;";
               $ex = mysqli_query($conn, $sql);
                 while ($rs = mysqli_fetch_array($ex)) {
             ?>
