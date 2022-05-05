@@ -90,9 +90,10 @@
 			let input_v = parseInt(onhand.value);
 			let onhand_d = parseInt(i_onhand2[index].selectedOptions[0].dataset.onhand)
 			if (input_v > onhand_d){
-				ic ++
+				ic ++;
 				document.querySelectorAll("#wraning_onhand")[index].innerText = "สินค้าไม่เพียงพอ";
 			}else{
+				ic --;
 				document.querySelectorAll("#wraning_onhand")[index].innerText = "";
 			}
 		})
