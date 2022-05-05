@@ -20,7 +20,7 @@
     <div style="min-height: 100vh" >
         <div class="container" style="margin: 20px auto; background: #F1E1A6;">
             <div align="center" style="background:#F1E1A6">
-            <h2>ออเดอร์</h2>
+            <h2>คำสั่งซื้อ</h2>
             <div class="d-flex flex-row-reverse m-4">
               <button style="background:#97DBAE" type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal1">
                 +

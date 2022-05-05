@@ -19,11 +19,11 @@
     <div style="min-height: 100vh" >
         <div class="container" style="margin: 20px auto; background:#F1E1A6;">
         <div align="center" class="divider">
-          <h3>รายงานผลยอดขาย</h3>
+          <h3>รายงานผลยอดขายผ้า ณ ปัจจุบัน</h3>
         <table  class="table table-borderless table-hover">
           <thead style="background:#97DBAE">
             <tr>
-              <th scope="col">รายงาน</th>
+              <th scope="col">รายการสินค้า</th>
               <th scope="col">วันที่ขาย</th>
                 <th scope="col">จำนวน (บาท)</th>
             </tr>
@@ -64,14 +64,14 @@
         </table> 
 
         <div align="center" class="divider mt-5">
-          <h3>รายงานผลสินค้าคงคลัง</h3>
+          <h3>รายการสินค้าคงคลัง</h3>
         <table  class="table table-borderless table-hover">
           <thead style="background:#97DBAE">
             <tr align="center" >
               <th scope="col">ชื่อสินค้า</th>
               <th scope="col">วันที่สินค้าเข้า</th>
               <th scope="col">จำนวนสินค้าที่รับเข้า (กิโลกรัม)</th>
-              <th scope="col">วันที่</th>
+              <th scope="col">วันที่ปัจจุบัน</th>
               <th scope="col">คงเหลือ (กิโลกรัม)</th>
             </tr>
           </thead>

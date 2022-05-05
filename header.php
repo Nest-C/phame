@@ -10,7 +10,7 @@
     <div>
         <img src="./img/logo-nav.png" alt="Paris" width="130" height="90">
         <div class="input-group rounded">
-            <input type="search" value="<?php echo isset($_GET['q']) ? $_GET['q']:""?>"
+        <input type="search" value="<?php echo isset($_GET['q']) ? $_GET['q']:""?>"
                 onkeyup="event.keyCode == 13 ? go('product.php?q=' + event.target.value.toLowerCase()):null;"
                 class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
         </div>
@@ -33,7 +33,7 @@
                         <li><a href="admin_product.php">สินค้า</a></li>
                         <li><a href="admin_category.php">ประเภทสินค้า</a></li>
                         <li><a href="admin_member.php">พนักงาน</a></li>
-                        <li><a href="admin_order.php">ออเดอร์</a></li>
+                        <li><a href="admin_order.php">คำสั่งซื้อ</a></li>
                         <li><a href="report.php">รายงาน</a></li>
                     </ul>
                     <?php endif ?>

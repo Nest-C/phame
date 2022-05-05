@@ -36,8 +36,8 @@
           <table class="table table-borderless table-hover">
             <thead style="background:#97DBAE">
               <tr>
-                <th scope="col">รหัส</th>
-                <th scope="col">ชื่อ</th>
+                <th scope="col">รหัสประเภทสินค้า</th>
+                <th scope="col">ชื่อประเภทสินค้า</th>
                 <th scope="col">แก้ไข</th>
                 <th scope="col">ลบ</th>
               </tr>
