@@ -22,18 +22,28 @@
 		<div class="p-2 ">
 			<div class="row justify-content-start">
 				<?php
-						$sql = "SELECT * FROM product INNER JOIN images ON images.pd_id = product.pd_id";
-						if (isset($_GET['q']) || isset($_GET['min']) || isset($_GET['max']) || isset($_GET['ctid'])) {
-							$sql .= " WHERE ";
-							if (isset($_GET['ctid'])) {
-								$sql .= "ct_id = " . $_GET['ctid'];	
-							}
-							if (isset($_GET['q'])) {
-								$sql .= "LOWER(pd_name) LIKE '%" . $_GET['q'] . "%' or product.pd_id = $_GET[q]";
-							}
-							 } $sql
-								.= " GROUP BY images.pd_id"; $ex = mysqli_query($conn, $sql); while
-								($rs = mysqli_fetch_array($ex)) { include "item_product.php"; } ?>
+				$sql = "SELECT * FROM product INNER JOIN images ON images.pd_id = product.pd_id";
+				if (isset($_GET['q']) || isset($_GET['min']) || isset($_GET['max']) || isset($_GET['ctid'])) {
+					$sql .= " WHERE ";
+					if (isset($_GET['ctid'])) {
+						$sql .= "ct_id = " . $_GET['ctid'];
+					}
+					if (isset($_GET['q'])) {
+						$sql .= "LOWER(pd_name) LIKE '%" . $_GET['q'] . "%' ";
+						if (isset($_GET['min'])) {
+							$sql .= "AND ";
+						}
+					}
+					if (isset($_GET['min'])) {
+						$sql .= "pd_price >= ".$_GET['min']." AND pd_price <=" . $_GET['max'];
+					}
+				}
+				$sql .= " GROUP BY images.pd_id";
+				$ex = mysqli_query($conn, $sql);
+				while ($rs = mysqli_fetch_array($ex)) {
+					include "item_product.php";
+				}
+				 ?>
 			</div>
 		</div>
 	</div>
