@@ -29,7 +29,7 @@
 						$sql .= "ct_id = " . $_GET['ctid'];
 					}
 					if (isset($_GET['q'])) {
-						$sql .= "LOWER(pd_name) LIKE '%" . $_GET['q'] . "%' ";
+						$sql .= "LOWER(pd_name) LIKE '%" . $_GET['q'] . "%' or product.pd_id LIKE '%" . $_GET['q'] . "%'  ";
 						if (isset($_GET['min'])) {
 							$sql .= "AND ";
 						}
